@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="content">
+
+	<insert id="writeContent" parameterType="spring.command.ContentCommand">
+		insert into project_board values (project_board_index.Nextval,#{userName},#{password},#{subject},#{email},#{content}, default)
+	</insert>
+
+	<select id="getContent" resultType="spring.command.ContentCommand" parameterType="Integer">
+ 		select * from project_board where num = #{num}
+	</select>
+	
+</mapper>
